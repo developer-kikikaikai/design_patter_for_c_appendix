@@ -87,15 +87,6 @@ PRE_UNINSTALL = :
 POST_UNINSTALL = :
 build_triplet = @build@
 host_triplet = @host@
-@USE_FLYWEIGHT_TRUE@am__append_1 = flyweight
-@USE_BUILDER_TRUE@am__append_2 = builder
-@USE_PUBLISHER_TRUE@am__append_3 = publisher
-@USE_THREADPOOL_TRUE@am__append_4 = threadpool
-@USE_STATE_TRUE@am__append_5 = state
-@USE_COR_TRUE@am__append_6 = chain_of_responsibility
-@USE_MEMPOOL_TRUE@am__append_7 = memorypool
-@USE_PROTOTYPE_TRUE@am__append_8 = prototype
-@USE_SAMPLE_TRUE@am__append_9 = mediator proxy command combination_sample
 subdir = .
 ACLOCAL_M4 = $(top_srcdir)/aclocal.m4
 am__aclocal_m4_deps = $(top_srcdir)/configure.ac
@@ -165,9 +156,7 @@ am__define_uniq_tagged_files = \
 ETAGS = etags
 CTAGS = ctags
 CSCOPE = cscope
-DIST_SUBDIRS = design_pattern_util flyweight builder publisher \
-	threadpool state chain_of_responsibility memorypool prototype \
-	mediator proxy command combination_sample
+DIST_SUBDIRS = $(SUBDIRS)
 am__DIST_COMMON = $(srcdir)/Makefile.in $(srcdir)/config.h.in README \
 	ar-lib compile config.guess config.sub install-sh ltmain.sh \
 	missing
@@ -246,10 +235,6 @@ INSTALL_SCRIPT = @INSTALL_SCRIPT@
 INSTALL_STRIP_PROGRAM = @INSTALL_STRIP_PROGRAM@
 LD = @LD@
 LDFLAGS = @LDFLAGS@
-LIBEVENT_CFLAGS = @LIBEVENT_CFLAGS@
-LIBEVENT_LIBS = @LIBEVENT_LIBS@
-LIBEV_CFLAGS = @LIBEV_CFLAGS@
-LIBEV_LIBS = @LIBEV_LIBS@
 LIBOBJS = @LIBOBJS@
 LIBS = @LIBS@
 LIBTOOL = @LIBTOOL@
@@ -274,9 +259,6 @@ PACKAGE_TARNAME = @PACKAGE_TARNAME@
 PACKAGE_URL = @PACKAGE_URL@
 PACKAGE_VERSION = @PACKAGE_VERSION@
 PATH_SEPARATOR = @PATH_SEPARATOR@
-PKG_CONFIG = @PKG_CONFIG@
-PKG_CONFIG_LIBDIR = @PKG_CONFIG_LIBDIR@
-PKG_CONFIG_PATH = @PKG_CONFIG_PATH@
 RANLIB = @RANLIB@
 SED = @SED@
 SET_MAKE = @SET_MAKE@
@@ -336,10 +318,7 @@ target_alias = @target_alias@
 top_build_prefix = @top_build_prefix@
 top_builddir = @top_builddir@
 top_srcdir = @top_srcdir@
-SUBDIRS = design_pattern_util $(am__append_1) $(am__append_2) \
-	$(am__append_3) $(am__append_4) $(am__append_5) \
-	$(am__append_6) $(am__append_7) $(am__append_8) \
-	$(am__append_9)
+SUBDIRS = design_pattern_util mediator proxy command
 all: config.h
 	$(MAKE) $(AM_MAKEFLAGS) all-recursive
 
