@@ -1,0 +1,10 @@
+{
+  global:
+    publisher_new;
+    publisher_free;
+    publisher_subscribe;
+    publisher_subscribe_oneshot;
+    publisher_unsubscribe;
+    publisher_publish;
+  local: *;
+};
