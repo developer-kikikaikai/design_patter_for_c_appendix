@@ -1,0 +1,8 @@
+{
+  global:
+    abstruct_factory_new;
+    abstruct_factory_free;
+    get_product1;
+    get_product2;
+  local: *;
+};

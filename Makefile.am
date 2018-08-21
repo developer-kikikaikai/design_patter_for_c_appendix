@@ -1,2 +1,2 @@
 SUBDIRS=design_pattern_util
-SUBDIRS+= mediator proxy command
+SUBDIRS+= mediator proxy command abstruct_factory

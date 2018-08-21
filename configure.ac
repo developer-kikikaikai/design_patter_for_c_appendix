@@ -41,6 +41,9 @@ AC_CONFIG_FILES([Makefile
 		 proxy/sample2/Makefile
 		 command/Makefile
 		 command/sample/Makefile
+		 abstruct_factory/Makefile
+		 abstruct_factory/lib/Makefile
+		 abstruct_factory/src/Makefile
 		 ])
 
 AC_OUTPUT
