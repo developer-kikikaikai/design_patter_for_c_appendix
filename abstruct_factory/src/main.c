@@ -5,8 +5,8 @@
 
 int main() {
 	AbstructFactory factory = abstruct_factory_new();
-	printf("call product1 API:%s\n", get_product1(factory)->get_name1());
-	printf("call product2 API:%s\n", get_product2(factory)->get_name2());
+	printf("call product1 API:%s\n", factory->get_product1(factory)->get_name1());
+	printf("call product2 API:%s\n", factory->get_product2(factory)->get_name2());
 	abstruct_factory_free(factory);
 	return 0;
 }
