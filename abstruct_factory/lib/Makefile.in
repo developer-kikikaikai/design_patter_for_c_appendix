@@ -129,19 +129,19 @@ am__uninstall_files_from_dir = { \
   }
 am__installdirs = "$(DESTDIR)$(libdir)"
 LTLIBRARIES = $(lib_LTLIBRARIES)
-libabstruct_factory_la_LIBADD =
-am_libabstruct_factory_la_OBJECTS =  \
-	libabstruct_factory_la-abstruct_factory.lo \
-	libabstruct_factory_la-product1.lo \
-	libabstruct_factory_la-product2.lo
-libabstruct_factory_la_OBJECTS = $(am_libabstruct_factory_la_OBJECTS)
+libproducts_factory_la_LIBADD =
+am_libproducts_factory_la_OBJECTS =  \
+	libproducts_factory_la-products_factory.lo \
+	libproducts_factory_la-product1.lo \
+	libproducts_factory_la-product2.lo
+libproducts_factory_la_OBJECTS = $(am_libproducts_factory_la_OBJECTS)
 AM_V_lt = $(am__v_lt_@AM_V@)
 am__v_lt_ = $(am__v_lt_@AM_DEFAULT_V@)
 am__v_lt_0 = --silent
 am__v_lt_1 = 
-libabstruct_factory_la_LINK = $(LIBTOOL) $(AM_V_lt) --tag=CC \
+libproducts_factory_la_LINK = $(LIBTOOL) $(AM_V_lt) --tag=CC \
 	$(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=link $(CCLD) \
-	$(AM_CFLAGS) $(CFLAGS) $(libabstruct_factory_la_LDFLAGS) \
+	$(AM_CFLAGS) $(CFLAGS) $(libproducts_factory_la_LDFLAGS) \
 	$(LDFLAGS) -o $@
 AM_V_P = $(am__v_P_@AM_V@)
 am__v_P_ = $(am__v_P_@AM_DEFAULT_V@)
@@ -177,8 +177,8 @@ AM_V_CCLD = $(am__v_CCLD_@AM_V@)
 am__v_CCLD_ = $(am__v_CCLD_@AM_DEFAULT_V@)
 am__v_CCLD_0 = @echo "  CCLD    " $@;
 am__v_CCLD_1 = 
-SOURCES = $(libabstruct_factory_la_SOURCES)
-DIST_SOURCES = $(libabstruct_factory_la_SOURCES)
+SOURCES = $(libproducts_factory_la_SOURCES)
+DIST_SOURCES = $(libproducts_factory_la_SOURCES)
 am__can_run_installinfo = \
   case $$AM_UPDATE_INFO_DIR in \
     n|no|NO) false;; \
@@ -321,11 +321,11 @@ target_alias = @target_alias@
 top_build_prefix = @top_build_prefix@
 top_builddir = @top_builddir@
 top_srcdir = @top_srcdir@
-lib_LTLIBRARIES = libabstruct_factory.la
-libabstruct_factory_la_SOURCES = abstruct_factory.c product1.c product2.c
-libabstruct_factory_la_CPPFLAGS = -I../include
+lib_LTLIBRARIES = libproducts_factory.la
+libproducts_factory_la_SOURCES = products_factory.c product1.c product2.c
+libproducts_factory_la_CPPFLAGS = -I../include
 #for static library
-libabstruct_factory_la_LDFLAGS = -shared \
+libproducts_factory_la_LDFLAGS = -shared \
 	-Wl,--version-script,abstruct_factory.map
 all: all-am
 
@@ -396,8 +396,8 @@ clean-libLTLIBRARIES:
 	  rm -f $${locs}; \
 	}
 
-libabstruct_factory.la: $(libabstruct_factory_la_OBJECTS) $(libabstruct_factory_la_DEPENDENCIES) $(EXTRA_libabstruct_factory_la_DEPENDENCIES) 
-	$(AM_V_CCLD)$(libabstruct_factory_la_LINK) -rpath $(libdir) $(libabstruct_factory_la_OBJECTS) $(libabstruct_factory_la_LIBADD) $(LIBS)
+libproducts_factory.la: $(libproducts_factory_la_OBJECTS) $(libproducts_factory_la_DEPENDENCIES) $(EXTRA_libproducts_factory_la_DEPENDENCIES) 
+	$(AM_V_CCLD)$(libproducts_factory_la_LINK) -rpath $(libdir) $(libproducts_factory_la_OBJECTS) $(libproducts_factory_la_LIBADD) $(LIBS)
 
 mostlyclean-compile:
 	-rm -f *.$(OBJEXT)
@@ -405,9 +405,9 @@ mostlyclean-compile:
 distclean-compile:
 	-rm -f *.tab.c
 
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libabstruct_factory_la-abstruct_factory.Plo@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libabstruct_factory_la-product1.Plo@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libabstruct_factory_la-product2.Plo@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libproducts_factory_la-product1.Plo@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libproducts_factory_la-product2.Plo@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libproducts_factory_la-products_factory.Plo@am__quote@
 
 .c.o:
 @am__fastdepCC_TRUE@	$(AM_V_CC)$(COMPILE) -MT $@ -MD -MP -MF $(DEPDIR)/$*.Tpo -c -o $@ $<
@@ -430,26 +430,26 @@ distclean-compile:
 @AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
 @am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(LTCOMPILE) -c -o $@ $<
 
-libabstruct_factory_la-abstruct_factory.lo: abstruct_factory.c
-@am__fastdepCC_TRUE@	$(AM_V_CC)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libabstruct_factory_la_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT libabstruct_factory_la-abstruct_factory.lo -MD -MP -MF $(DEPDIR)/libabstruct_factory_la-abstruct_factory.Tpo -c -o libabstruct_factory_la-abstruct_factory.lo `test -f 'abstruct_factory.c' || echo '$(srcdir)/'`abstruct_factory.c
-@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/libabstruct_factory_la-abstruct_factory.Tpo $(DEPDIR)/libabstruct_factory_la-abstruct_factory.Plo
-@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='abstruct_factory.c' object='libabstruct_factory_la-abstruct_factory.lo' libtool=yes @AMDEPBACKSLASH@
+libproducts_factory_la-products_factory.lo: products_factory.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libproducts_factory_la_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT libproducts_factory_la-products_factory.lo -MD -MP -MF $(DEPDIR)/libproducts_factory_la-products_factory.Tpo -c -o libproducts_factory_la-products_factory.lo `test -f 'products_factory.c' || echo '$(srcdir)/'`products_factory.c
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/libproducts_factory_la-products_factory.Tpo $(DEPDIR)/libproducts_factory_la-products_factory.Plo
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='products_factory.c' object='libproducts_factory_la-products_factory.lo' libtool=yes @AMDEPBACKSLASH@
 @AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
-@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libabstruct_factory_la_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o libabstruct_factory_la-abstruct_factory.lo `test -f 'abstruct_factory.c' || echo '$(srcdir)/'`abstruct_factory.c
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libproducts_factory_la_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o libproducts_factory_la-products_factory.lo `test -f 'products_factory.c' || echo '$(srcdir)/'`products_factory.c
 
-libabstruct_factory_la-product1.lo: product1.c
-@am__fastdepCC_TRUE@	$(AM_V_CC)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libabstruct_factory_la_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT libabstruct_factory_la-product1.lo -MD -MP -MF $(DEPDIR)/libabstruct_factory_la-product1.Tpo -c -o libabstruct_factory_la-product1.lo `test -f 'product1.c' || echo '$(srcdir)/'`product1.c
-@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/libabstruct_factory_la-product1.Tpo $(DEPDIR)/libabstruct_factory_la-product1.Plo
-@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='product1.c' object='libabstruct_factory_la-product1.lo' libtool=yes @AMDEPBACKSLASH@
+libproducts_factory_la-product1.lo: product1.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libproducts_factory_la_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT libproducts_factory_la-product1.lo -MD -MP -MF $(DEPDIR)/libproducts_factory_la-product1.Tpo -c -o libproducts_factory_la-product1.lo `test -f 'product1.c' || echo '$(srcdir)/'`product1.c
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/libproducts_factory_la-product1.Tpo $(DEPDIR)/libproducts_factory_la-product1.Plo
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='product1.c' object='libproducts_factory_la-product1.lo' libtool=yes @AMDEPBACKSLASH@
 @AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
-@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libabstruct_factory_la_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o libabstruct_factory_la-product1.lo `test -f 'product1.c' || echo '$(srcdir)/'`product1.c
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libproducts_factory_la_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o libproducts_factory_la-product1.lo `test -f 'product1.c' || echo '$(srcdir)/'`product1.c
 
-libabstruct_factory_la-product2.lo: product2.c
-@am__fastdepCC_TRUE@	$(AM_V_CC)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libabstruct_factory_la_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT libabstruct_factory_la-product2.lo -MD -MP -MF $(DEPDIR)/libabstruct_factory_la-product2.Tpo -c -o libabstruct_factory_la-product2.lo `test -f 'product2.c' || echo '$(srcdir)/'`product2.c
-@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/libabstruct_factory_la-product2.Tpo $(DEPDIR)/libabstruct_factory_la-product2.Plo
-@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='product2.c' object='libabstruct_factory_la-product2.lo' libtool=yes @AMDEPBACKSLASH@
+libproducts_factory_la-product2.lo: product2.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libproducts_factory_la_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT libproducts_factory_la-product2.lo -MD -MP -MF $(DEPDIR)/libproducts_factory_la-product2.Tpo -c -o libproducts_factory_la-product2.lo `test -f 'product2.c' || echo '$(srcdir)/'`product2.c
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/libproducts_factory_la-product2.Tpo $(DEPDIR)/libproducts_factory_la-product2.Plo
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='product2.c' object='libproducts_factory_la-product2.lo' libtool=yes @AMDEPBACKSLASH@
 @AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
-@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libabstruct_factory_la_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o libabstruct_factory_la-product2.lo `test -f 'product2.c' || echo '$(srcdir)/'`product2.c
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libproducts_factory_la_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o libproducts_factory_la-product2.lo `test -f 'product2.c' || echo '$(srcdir)/'`product2.c
 
 mostlyclean-libtool:
 	-rm -f *.lo

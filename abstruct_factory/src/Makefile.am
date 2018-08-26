@@ -1,7 +1,6 @@
 #load common setting
 noinst_PROGRAMS = sample
 
-sample_CXXFLAGS = -g -O2 -I../include
-sample_CFLAGS = -g -O2 -I../include
-sample_LDFLAGS = ../lib/libabstruct_factory.la
-sample_SOURCES = main.c
+sample_CXXFLAGS = -g -O0 -I../include -I.
+sample_CFLAGS = -g -O0 -I../include -I.
+sample_SOURCES = main.c abstruct_factory.c

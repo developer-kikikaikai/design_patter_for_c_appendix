@@ -100,7 +100,8 @@ CONFIG_HEADER = $(top_builddir)/config.h
 CONFIG_CLEAN_FILES =
 CONFIG_CLEAN_VPATH_FILES =
 PROGRAMS = $(noinst_PROGRAMS)
-am_sample_OBJECTS = sample-main.$(OBJEXT)
+am_sample_OBJECTS = sample-main.$(OBJEXT) \
+	sample-abstruct_factory.$(OBJEXT)
 sample_OBJECTS = $(am_sample_OBJECTS)
 sample_LDADD = $(LDADD)
 AM_V_lt = $(am__v_lt_@AM_V@)
@@ -109,7 +110,7 @@ am__v_lt_0 = --silent
 am__v_lt_1 = 
 sample_LINK = $(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) \
 	$(LIBTOOLFLAGS) --mode=link $(CCLD) $(sample_CFLAGS) $(CFLAGS) \
-	$(sample_LDFLAGS) $(LDFLAGS) -o $@
+	$(AM_LDFLAGS) $(LDFLAGS) -o $@
 AM_V_P = $(am__v_P_@AM_V@)
 am__v_P_ = $(am__v_P_@AM_DEFAULT_V@)
 am__v_P_0 = false
@@ -288,10 +289,9 @@ target_alias = @target_alias@
 top_build_prefix = @top_build_prefix@
 top_builddir = @top_builddir@
 top_srcdir = @top_srcdir@
-sample_CXXFLAGS = -g -O2 -I../include
-sample_CFLAGS = -g -O2 -I../include
-sample_LDFLAGS = ../lib/libabstruct_factory.la
-sample_SOURCES = main.c
+sample_CXXFLAGS = -g -O0 -I../include -I.
+sample_CFLAGS = -g -O0 -I../include -I.
+sample_SOURCES = main.c abstruct_factory.c
 all: all-am
 
 .SUFFIXES:
@@ -345,6 +345,7 @@ mostlyclean-compile:
 distclean-compile:
 	-rm -f *.tab.c
 
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/sample-abstruct_factory.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/sample-main.Po@am__quote@
 
 .c.o:
@@ -381,6 +382,20 @@ sample-main.obj: main.c
 @AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='main.c' object='sample-main.obj' libtool=no @AMDEPBACKSLASH@
 @AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
 @am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(sample_CFLAGS) $(CFLAGS) -c -o sample-main.obj `if test -f 'main.c'; then $(CYGPATH_W) 'main.c'; else $(CYGPATH_W) '$(srcdir)/main.c'; fi`
+
+sample-abstruct_factory.o: abstruct_factory.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(sample_CFLAGS) $(CFLAGS) -MT sample-abstruct_factory.o -MD -MP -MF $(DEPDIR)/sample-abstruct_factory.Tpo -c -o sample-abstruct_factory.o `test -f 'abstruct_factory.c' || echo '$(srcdir)/'`abstruct_factory.c
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/sample-abstruct_factory.Tpo $(DEPDIR)/sample-abstruct_factory.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='abstruct_factory.c' object='sample-abstruct_factory.o' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(sample_CFLAGS) $(CFLAGS) -c -o sample-abstruct_factory.o `test -f 'abstruct_factory.c' || echo '$(srcdir)/'`abstruct_factory.c
+
+sample-abstruct_factory.obj: abstruct_factory.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(sample_CFLAGS) $(CFLAGS) -MT sample-abstruct_factory.obj -MD -MP -MF $(DEPDIR)/sample-abstruct_factory.Tpo -c -o sample-abstruct_factory.obj `if test -f 'abstruct_factory.c'; then $(CYGPATH_W) 'abstruct_factory.c'; else $(CYGPATH_W) '$(srcdir)/abstruct_factory.c'; fi`
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/sample-abstruct_factory.Tpo $(DEPDIR)/sample-abstruct_factory.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='abstruct_factory.c' object='sample-abstruct_factory.obj' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(sample_CFLAGS) $(CFLAGS) -c -o sample-abstruct_factory.obj `if test -f 'abstruct_factory.c'; then $(CYGPATH_W) 'abstruct_factory.c'; else $(CYGPATH_W) '$(srcdir)/abstruct_factory.c'; fi`
 
 mostlyclean-libtool:
 	-rm -f *.lo
