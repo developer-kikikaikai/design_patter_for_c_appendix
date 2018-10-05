@@ -13104,7 +13104,7 @@ fi
 done
 
 
-ac_config_files="$ac_config_files Makefile design_pattern_util/Makefile design_pattern_util/lib/Makefile design_pattern_util/include/Makefile design_pattern_util/sample/Makefile mediator/Makefile mediator/sample/Makefile proxy/Makefile proxy/sample1/Makefile proxy/sample2/Makefile command/Makefile command/sample/Makefile abstruct_factory/Makefile abstruct_factory/lib/Makefile abstruct_factory/src/Makefile"
+ac_config_files="$ac_config_files Makefile design_pattern_util/Makefile design_pattern_util/lib/Makefile design_pattern_util/include/Makefile design_pattern_util/sample/Makefile mediator/Makefile mediator/sample/Makefile proxy/Makefile proxy/sample1/Makefile proxy/sample2/Makefile command/Makefile command/sample/Makefile abstruct_factory/Makefile abstruct_factory/lib/Makefile abstruct_factory/src/Makefile factory_method/Makefile factory_method/sample/Makefile"
 
 
 cat >confcache <<\_ACEOF
@@ -14137,6 +14137,8 @@ do
     "abstruct_factory/Makefile") CONFIG_FILES="$CONFIG_FILES abstruct_factory/Makefile" ;;
     "abstruct_factory/lib/Makefile") CONFIG_FILES="$CONFIG_FILES abstruct_factory/lib/Makefile" ;;
     "abstruct_factory/src/Makefile") CONFIG_FILES="$CONFIG_FILES abstruct_factory/src/Makefile" ;;
+    "factory_method/Makefile") CONFIG_FILES="$CONFIG_FILES factory_method/Makefile" ;;
+    "factory_method/sample/Makefile") CONFIG_FILES="$CONFIG_FILES factory_method/sample/Makefile" ;;
 
   *) as_fn_error $? "invalid argument: \`$ac_config_target'" "$LINENO" 5;;
   esac
