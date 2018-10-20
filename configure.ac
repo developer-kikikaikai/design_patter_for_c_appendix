@@ -46,6 +46,9 @@ AC_CONFIG_FILES([Makefile
 		 abstruct_factory/src/Makefile
 		 factory_method/Makefile
 		 factory_method/sample/Makefile
+		 bridge/Makefile
+		 bridge/base/Makefile
+		 bridge/expand/Makefile
 		 ])
 
 AC_OUTPUT
