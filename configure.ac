@@ -49,6 +49,8 @@ AC_CONFIG_FILES([Makefile
 		 bridge/Makefile
 		 bridge/base/Makefile
 		 bridge/expand/Makefile
+		 decorator/Makefile
+		 decorator/sample/Makefile
 		 ])
 
 AC_OUTPUT
