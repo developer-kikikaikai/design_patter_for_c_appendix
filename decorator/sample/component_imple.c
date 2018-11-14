@@ -25,21 +25,18 @@ HTTPResponseComponent base_component_new(void) {
 }
 
 static void header_response_append(HTTPResponseComponent this, char *request_uri, char *header, char *body) {
-	Decorator decorator = (Decorator)this;
-	decorator->component->response_append(decorator->component, request_uri, header, body);
-
 	char response[128]={0};
 	snprintf(response, sizeof(response), "referer: %s\r\n", request_uri);
 	memmove(&header[strlen(response)], header, strlen(header));
 	memcpy(header, response, strlen(response));
+
+	Decorator decorator = (Decorator)this;
+	decorator->component->response_append(decorator->component, request_uri, header, body);
 }
 
 #define RESPONSE_BODY "Hello World!!\r\n"
 #define RESPONSE_BODY_LEN (strlen(RESPONSE_BODY))
 static void body_response_append(HTTPResponseComponent this, char *request_uri, char *header, char *body) {
-	Decorator decorator = (Decorator)this;
-	decorator->component->response_append(decorator->component, request_uri, header, body);
-
 	char response[256]={0};
 	snprintf(response, sizeof(response), "status:200\r\ncontent_length: %lu\r\n", RESPONSE_BODY_LEN);
 	memmove(&header[strlen(response)], header, strlen(header));
@@ -47,6 +44,9 @@ static void body_response_append(HTTPResponseComponent this, char *request_uri, 
 	/*body*/
 	memmove(&body[RESPONSE_BODY_LEN], body, strlen(body));
 	memcpy(body, RESPONSE_BODY, RESPONSE_BODY_LEN);
+
+	Decorator decorator = (Decorator)this;
+	decorator->component->response_append(decorator->component, request_uri, header, body);
 }
 
 static void decorator_free(HTTPResponseComponent this) {
